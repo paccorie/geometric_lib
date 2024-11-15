@@ -1,6 +1,5 @@
 
 def area(a):
-    return a * a
     '''
     Возвращает площадь квадрата.
     
@@ -11,6 +10,7 @@ def area(a):
     Возвращаемое значение:
         4
     '''
+    return a * a
 
 def perimeter(a):
     '''
