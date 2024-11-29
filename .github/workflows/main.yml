@@ -1,0 +1,32 @@
+name: RunUnittest
+
+on:
+  push:
+    branches:
+      - labwork5
+  pull_request:
+    branches:
+      - labwork5
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run unittests
+        run: |
+          python -m unittest 'TestGeometryFunc.py'
+
+
+    
